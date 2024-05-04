@@ -18,5 +18,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd node-zero-downtime-deployment
+            printf '%s' '${{ secrets.DEV_ENV }}' > .env
             git pull
             ./.deploy/docker_update.sh app
