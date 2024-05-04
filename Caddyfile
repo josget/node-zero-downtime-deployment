@@ -1,5 +1,5 @@
 {env.APP_DOMAIN} {
-  reverse_proxy node-app:{env.APP_PORT} {
+  reverse_proxy app:{env.APP_PORT} {
     header_down Strict-Transport-Security max-age=31536000;
   }
 }
