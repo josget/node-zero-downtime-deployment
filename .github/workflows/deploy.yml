@@ -18,6 +18,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd node-zero-downtime-deployment
-            echo $PWD
-            git fetch origin main:main
+            git fetch
             ./docker_update.sh app

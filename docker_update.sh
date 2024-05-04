@@ -30,9 +30,6 @@ done
 echo ""
 echo "[DONE] $NEW_CONTAINER_NAME is ready!"
 
-echo "[DONE] Restarting caddy.."
-docker compose restart caddy
-
 echo -n "[INIT] Killing $OLD_CONTAINER_NAME: "
 docker stop $OLD_CONTAINER_ID
 while [[ -z $(docker ps -a -f "id=$OLD_CONTAINER_ID" -f "status=exited" -q) ]]; do
