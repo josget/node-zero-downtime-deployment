@@ -6,8 +6,10 @@ services:
             - NODE_ENV=production
         build:
               context: ./
+        env_file:
+          - .env
         healthcheck:
-              test: ["CMD", "curl", "-f", "http://localhost:4000"]
+              test: ["CMD", "curl", "-f", "http://localhost:${APP_PORT}"]
               interval: 10s
               timeout: 5s
               retries: 3
@@ -20,6 +22,8 @@ services:
         ports:
             - "80:80"
             - "443:443"
+        env_file:
+          - .env
         volumes:            
         - ./Caddyfile:/etc/caddy/Caddyfile
         - ./site:/srv

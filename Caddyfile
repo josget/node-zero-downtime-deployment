@@ -1,8 +1,5 @@
-# Replace example.com with your application's domain
-dev.banano.name {
-  # node-app:4000 is the docker container running the Node.js application
-  # in our case it's exposed on port 4000
-  reverse_proxy node-app:4000  {
+{env.APP_DOMAIN} {
+  reverse_proxy node-app:{env.APP_PORT} {
     header_down Strict-Transport-Security max-age=31536000;
-   }
+  }
 }
