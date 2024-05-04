@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const host = "0.0.0.0";
-const port = process.env.PORT || 4000;
+const port = +process.env.APP_PORT || 4000;
 
 const requestListener = function (req: IncomingMessage, res: ServerResponse) {
   res.writeHead(200);
