@@ -48,3 +48,5 @@ echo -n "[DONE] Removing $OLD_CONTAINER_NAME: "
 docker rm -f $OLD_CONTAINER_ID
 echo "[DONE] Scaling down"
 docker compose up -d --no-deps --scale $SERVICE_NAME=1 --no-recreate
+
+echo "[DONE] Deployment completed successfully 🎉🎉🎉"
