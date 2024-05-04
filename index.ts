@@ -7,7 +7,7 @@ const port = +process.env.APP_PORT! || 4000;
 
 const requestListener = function (req: IncomingMessage, res: ServerResponse) {
   res.writeHead(200);
-  res.end("Hello world 1");
+  res.end("Hello world 2");
 };
 
 const server = http.createServer(requestListener);
