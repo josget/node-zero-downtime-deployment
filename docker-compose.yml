@@ -1,6 +1,6 @@
 services:
     # Run the node application
-    node-app:
+    app:
         restart: unless-stopped
         environment: 
             - NODE_ENV=production

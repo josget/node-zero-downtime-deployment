@@ -20,4 +20,4 @@ jobs:
             cd node-zero-downtime-deployment
             echo $PWD
             git fetch origin main:main
-            ./docker_update.sh node-zero-downtime-deployment
+            ./docker_update.sh app
