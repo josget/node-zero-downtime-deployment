@@ -1,13 +1,16 @@
-version: '3.7'
 services:
     # Run the node application
     node-app:
-        container_name: node-app
         restart: unless-stopped
         environment: 
             - NODE_ENV=production
         build:
-            context: ./
+              context: ./
+        healthcheck:
+              test: ["CMD", "curl", "-f", "http://localhost:4000"]
+              interval: 10s
+              timeout: 5s
+              retries: 3
 
     # Run the caddy server        
     caddy:
@@ -18,8 +21,8 @@ services:
             - "80:80"
             - "443:443"
         volumes:            
-        - $PWD/Caddyfile:/etc/caddy/Caddyfile
-        - $PWD/site:/srv
+        - ./Caddyfile:/etc/caddy/Caddyfile
+        - ./site:/srv
         - caddy_data:/data
         - caddy_config:/config
 

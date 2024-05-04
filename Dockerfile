@@ -1,6 +1,8 @@
 # Use Node.js 14 Alpine
 FROM node:14-alpine
 
+RUN apk --no-cache add curl
+
 # Mode package.json into a tmp directory
 ADD package.json /tmp/package.json
 
