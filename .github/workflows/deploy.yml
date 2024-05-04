@@ -20,4 +20,4 @@ jobs:
             cd node-zero-downtime-deployment
             printf '%s' '${{ secrets.DEV_ENV }}' > .env
             git pull
-            ./.deploy/docker_update.sh app
+            ./docker_update.sh app
