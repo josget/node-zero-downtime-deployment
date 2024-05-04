@@ -19,4 +19,4 @@ jobs:
           script: |
             cd node-zero-downtime-deployment
             git pull
-            ./docker_update.sh app
+            ./.deploy/docker_update.sh app
