@@ -3,6 +3,8 @@
 # Exit if no service name is provided
 SERVICE_NAME=${1?"Usage: $0 <SERVICE_NAME>"}
 
+docker compose build $SERVICE_NAME
+
 echo "[INIT] Updating docker service $SERVICE_NAME"
 
 # Fetch the oldest running container's ID and name for the service
